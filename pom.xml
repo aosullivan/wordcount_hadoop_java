@@ -45,7 +45,7 @@
 		<dependency>
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-core</artifactId>
-			<version>1.2.0</version>
+			<version>0.20.205.0</version>  <!--  Amazon EMR compatible version -->
 			<scope>provided</scope>
 		</dependency>
 
