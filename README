@@ -1,0 +1,17 @@
+Expects the Jar to be on S3 already, with a certain Main class (see implementation)
+Input it hamlet text uploaded to S3.
+Output goes to S3 and can be seen in the Amazon UI.
+
+Remove s3:// protocol on output folder (second commandline arg) to write to HDFS instead
+
+Should we write to HDFS for better performance? since (I assume) the storage will be largely local.
+
+http://techblog.netflix.com/2013/01/hadoop-platform-as-service-in-cloud.html
+ "reading and writing from S3 can be slower than writing to HDFS. 
+ However, most queries and processes tend to be multi-stage MapReduce jobs, 
+ where mappers in the first stage read input data in parallel from S3, 
+ and reducers in the last stage write output data back to S3. 
+ HDFS and local storage are used for all intermediate and transient data, 
+ which reduces the performance overhead."
+
+However I haven't figured out how to access data in HDFS from Java.
