@@ -24,7 +24,7 @@ public class WordCount {
 		Configuration config = new Configuration();
 		FileSystem fs = FileSystem.get(config);
 		Path path = new Path(args[1]);
-		fs.delete(path , true);
+		//fs.delete(path , true);
 
 		Job job = new Job(config, "wordcount");
        
